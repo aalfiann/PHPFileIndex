@@ -35,6 +35,9 @@ $ignored = array('.', '..', '.svn', '.htaccess','index.php','assets');
 //Limit show items
 $limitrow = 10;
 
+//Format date
+$formatdate = 'd-m-Y H:i';
+
 //Show all error
 error_reporting(E_ALL);
 
@@ -179,7 +182,7 @@ function filesize_format($size, $sizes = array('Bytes', 'KB', 'MB', 'GB', 'TB', 
                                 <td><a href="'.$website.$value.'" alt="'.$value.'" title="Download">'.$value.'</a></td> 
                                 <td>'.filesize_format(filesize($value)).'</td>
                                 <td>'.pathinfo($value, PATHINFO_EXTENSION).'</td>
-                                <td>'.date ("d-m-Y H:i", filemtime($value)).'</td> 
+                                <td>'.date ($formatdate, filemtime($value)).'</td> 
                             </tr>';
                         }
                     ?>
