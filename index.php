@@ -18,7 +18,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 $sitetitle = 'PHP File Index';
 
 //Version PHP File Index
-$version = '1.1';
+$version = '1.2';
 
 //Author
 $author = 'M ABD AZIZ ALFIAN';
@@ -159,9 +159,9 @@ function filesize_format($size, $sizes = array('Bytes', 'KB', 'MB', 'GB', 'TB', 
       <div class="panel panel-info">
         <!-- Default panel contents -->
         <div class="panel-heading"><b>Latest Modified Files</b></div>
-
-            <!-- Table -->
-            <table class="table">
+            <div class="table-responsive">
+              <!-- Table -->
+              <table class="table">
                 <thead> 
                     <tr> 
                         <th class="col-xs-1">#</th> 
@@ -189,7 +189,8 @@ function filesize_format($size, $sizes = array('Bytes', 'KB', 'MB', 'GB', 'TB', 
                     ?>
                     <!-- End Generate Files -->
                 </tbody>
-            </table>
+              </table>
+            </div>
         </div>
       </div>
 
