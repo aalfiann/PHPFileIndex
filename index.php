@@ -18,7 +18,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 $sitetitle = 'PHP File Index';
 
 //Version PHP File Index
-$version = '1.0';
+$version = '1.1';
 
 //Author
 $author = 'M ABD AZIZ ALFIAN';
@@ -48,17 +48,17 @@ ini_set('display_errors','Off');
 //============================================================
 
 //Start Library
-$n = 1; 
+$n = 1;
+$i = 1;
 $website = (($ssl)?'https://':'http://').$_SERVER['HTTP_HOST'].'/'.$folder;
 
 function scan_dir($dir) {
     global $ignored,$limitrow;
-    $i=1;
+    
     $files = array();    
     foreach (scandir($dir) as $file) {
         if (in_array($file, $ignored)) continue;
         $files[$file] = filemtime($dir . '/' . $file);
-        if ($i++ == $limitrow) break;
     }
 
     arsort($files);
@@ -184,6 +184,7 @@ function filesize_format($size, $sizes = array('Bytes', 'KB', 'MB', 'GB', 'TB', 
                                 <td>'.pathinfo($value, PATHINFO_EXTENSION).'</td>
                                 <td>'.date ($formatdate, filemtime($value)).'</td> 
                             </tr>';
+                            if ($i++ == $limitrow) break;
                         }
                     ?>
                     <!-- End Generate Files -->
